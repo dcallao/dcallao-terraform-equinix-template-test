@@ -1,4 +1,4 @@
-name: 'pre-commit'
+name: 'run-pre-commit-hooks'
 # This workflow runs the pre-commit hooks defined in .pre-commit-config.yaml
 
 on:
@@ -8,8 +8,23 @@ on:
 
 jobs:
   pre-commit:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    env:
+      TF_IN_AUTOMATION: 1
+      TF_VERSION: ${{ matrix.tf }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        tf: [1]
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-python@v3
+    - name: Checkout from Github
+      uses: actions/checkout@v3
+    - name: Setup Python3
+      uses: actions/setup-python@v3
+    - name: Install TfLint
+      uses: terraform-linters/setup-tflint@v3
+    - name: Install Terraform-docs
+      uses: terraform-docs/gh-actions@v1.0.0
+    - name: Install ShellCheck
+      uses: ludeeus/action-shellcheck@master
     - uses: pre-commit/action@v3.0.0

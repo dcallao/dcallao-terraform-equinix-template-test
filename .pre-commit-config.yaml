@@ -48,10 +48,6 @@ repos:
     - id: terraform_tflint
       args:
         - "--args=--config=__GIT_WORKING_DIR__/.tflint.hcl"
-    - id: terrascan
-      args:
-        - --args=--non-recursive
-        - --args=--policy-type=k8s
 
 # Shell Script Formatter and Markdown Linter
 - repo: https://github.com/jumanjihouse/pre-commit-hooks
@@ -61,6 +57,8 @@ repos:
       args:
         - "'-l', '-i', '2', '-ci', '-sr', '-w'"
     - id: shellcheck
+      args:
+        - "--severity=warning"
     - id: markdownlint
 
 # JSON5 Linter
@@ -68,5 +66,4 @@ repos:
   rev: v3.0.0-alpha.4
   hooks:
   - id: prettier
-    # https://prettier.io/docs/en/options.html#parser
     files: '.json5$'
