@@ -24,9 +24,9 @@ jobs:
     - name: Install TfLint
       uses: terraform-linters/setup-tflint@v3
     - name: Install Terraform-docs
-      uses: jaxxstorm/action-install-gh-release@v1.5.0
+      uses: lablabs/setup-terraform-docs@v1
       with:
-        repo: terraform-docs/terraform-docs
+        terraform_docs_version: v0.16.0
     - name: Install ShellCheck
       uses: jaxxstorm/action-install-gh-release@v1.5.0
       with:
