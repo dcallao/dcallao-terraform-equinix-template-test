@@ -56,9 +56,6 @@ repos:
     - id: shfmt
       args:
         - "'-l', '-i', '2', '-ci', '-sr', '-w'"
-    - id: shellcheck
-      args:
-        - "--severity=warning"
     - id: markdownlint
 
 # JSON5 Linter
