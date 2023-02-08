@@ -30,4 +30,6 @@ jobs:
       uses: jaxxstorm/action-install-gh-release@v1.5.0
       with:
         repo: koalaman/shellcheck
+        platform: linux
+        arch: x86-64
     - uses: pre-commit/action@v3.0.0
