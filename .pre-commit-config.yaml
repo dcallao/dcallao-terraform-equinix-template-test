@@ -16,11 +16,11 @@ repos:
     - id: trailing-whitespace
       args: 
         - "--markdown-linebreak-ext=md"
-      exclude_types: [CHANGELOG.md, .*.md]
+      exclude: ["CHANGELOG.md", ".*.md"]
     - id: check-yaml
       args:
         - "--allow-multiple-documents"
-      exclude: "templates/.*"
+      exclude: "templates/*"
     - id: check-json
     - id: check-symlinks
     - id: check-executables-have-shebangs
