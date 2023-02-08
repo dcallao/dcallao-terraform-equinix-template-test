@@ -16,7 +16,7 @@ repos:
     - id: trailing-whitespace
       args: 
         - "--markdown-linebreak-ext=md"
-      exclude: "*.md"
+      exclude: "./*.md"
     - id: check-yaml
       args:
         - "--allow-multiple-documents"
