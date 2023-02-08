@@ -7,6 +7,7 @@ repos:
   hooks:
     - id: terraform_fmt
     - id: terraform_validate
+      exclude: '^[^/]+$'
     - id: terraform_docs
       args:
         - "--args=--config=.terraform-docs.yaml"
