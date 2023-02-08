@@ -16,7 +16,7 @@ repos:
     - id: trailing-whitespace
       args: 
         - "--markdown-linebreak-ext=md"
-      exclude: ["CHANGELOG.md", ".*.md"]
+      exclude_types: ["CHANGELOG.md", ".*.md"]
     - id: check-yaml
       args:
         - "--allow-multiple-documents"
