@@ -11,11 +11,9 @@ jobs:
     runs-on: ${{ matrix.os }}
     env:
       TF_IN_AUTOMATION: 1
-      TF_VERSION: ${{ matrix.tf }}
     strategy:
       matrix:
         os: [ubuntu-latest]
-        tf: [1]
     steps:
     - name: Checkout from Github
       uses: actions/checkout@v3
@@ -24,9 +22,9 @@ jobs:
     - name: Install TfLint
       uses: terraform-linters/setup-tflint@v3
     - name: Install Terraform-docs
-      uses: lablabs/setup-terraform-docs@v1
+      uses: jaxxstorm/action-install-gh-release@v1.5.0
       with:
-        terraform_docs_version: v0.16.0
+        repo: terraform-docs/terraform-docs
     - name: Install ShellCheck
       uses: jaxxstorm/action-install-gh-release@v1.5.0
       with:
