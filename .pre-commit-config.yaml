@@ -16,7 +16,7 @@ repos:
     - id: trailing-whitespace
       args: 
         - "--markdown-linebreak-ext=md"
-      exclude_types: ["CHANGELOG.md", ".*.md"]
+      exclude: "*.md"
     - id: check-yaml
       args:
         - "--allow-multiple-documents"
@@ -46,7 +46,7 @@ repos:
         - "--args=--lockfile=false"
     - id: terraform_providers_lock
     - id: terraform_tflint
-      exclude: 'examples/*'
+      exclude: "examples/*"
       args:
         - "--args=--config=__GIT_WORKING_DIR__/.tflint.hcl"
 
