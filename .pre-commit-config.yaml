@@ -10,7 +10,7 @@ repos:
       exclude: '^[^/]+$'
     - id: terraform_docs
       args:
-        - "--args=--config=.terraform-docs.yaml"
+        - "--args=--config=.config/.terraform-docs.yaml"
         - "--args=--lockfile=false"
     - id: terraform_providers_lock
     - id: terraform_tflint
