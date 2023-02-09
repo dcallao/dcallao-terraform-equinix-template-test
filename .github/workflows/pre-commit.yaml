@@ -22,8 +22,12 @@ jobs:
       uses: actions/setup-python@v3
     - name: Install TfLint
       uses: terraform-linters/setup-tflint@v3
-    - name: Install Terraform-docs
-      uses: jaxxstorm/action-install-gh-release@v1.5.0
+    - name: Run Terraform-docs
+      uses: terraform-docs/gh-actions@v1.0.0
       with:
-        repo: terraform-docs/terraform-docs
+        config-file: .terraform-docs.yaml
+        working-dir: .
+        output-file: README.md
+        output-method: inject
+        git-push: "true"
     - uses: pre-commit/action@v3.0.0

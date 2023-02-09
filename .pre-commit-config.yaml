@@ -8,10 +8,10 @@ repos:
     - id: terraform_fmt
     - id: terraform_validate
       exclude: '^[^/]+$'
-    - id: terraform_docs
-      args:
-        - "--args=--config=.config/.terraform-docs.yaml"
-        - "--args=--lockfile=false"
+    # - id: terraform_docs
+    #   args:
+    #     - "--args=--config=.terraform-docs.yaml"
+    #     - "--args=--lockfile=false"
     - id: terraform_providers_lock
     - id: terraform_tflint
       exclude: "examples/*"
@@ -37,7 +37,7 @@ repos:
     - id: check-yaml
       args:
         - "--allow-multiple-documents"
-      exclude: "./.*.yaml"
+      exclude: ".*.yaml"
     - id: check-json
     - id: check-symlinks
     - id: check-executables-have-shebangs
