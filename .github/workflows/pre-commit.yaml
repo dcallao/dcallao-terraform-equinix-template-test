@@ -29,5 +29,5 @@ jobs:
         working-dir: .
         output-file: README.md
         output-method: inject
-        git-push: "true"
+        # git-push: "true"
     - uses: pre-commit/action@v3.0.0
