@@ -21,7 +21,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        tf: [1.0.0]
+        tf: [1.3.0]
         tflint: [v0.44.1]
     permissions:
       pull-requests: write
@@ -72,4 +72,4 @@ jobs:
         arch: x86-64
   
     - uses: pre-commit/action@v3.0.0
-      #continue-on-error: true
+      continue-on-error: true
