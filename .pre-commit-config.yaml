@@ -6,17 +6,17 @@ repos:
   rev: v1.77.1
   hooks:
     - id: terraform_fmt
+      args:
+        - "--args=-recursive"
     - id: terraform_validate
-      exclude: '^[^/]+$'
-    # - id: terraform_docs
-    #   args:
-    #     - "--args=--config=.terraform-docs.yaml"
-    #     - "--args=--lockfile=false"
+      exclude: "^[^/]+$"
     - id: terraform_providers_lock
     - id: terraform_tflint
-      exclude: "examples/*"
       args:
         - "--args=--config=__GIT_WORKING_DIR__/.tflint.hcl"
+    - id: terraform_tfsec
+      args:
+        - "--args=--soft-fail"
 
 - repo: https://github.com/pre-commit/pre-commit-hooks
   rev: v4.4.0
@@ -27,6 +27,8 @@ repos:
     - id: check-vcs-permalinks
     - id: forbid-new-submodules
     - id: no-commit-to-branch
+      args:
+        - "--branch=main"
 
     # Common errors
     - id: end-of-file-fixer
@@ -55,12 +57,15 @@ repos:
 - repo: https://github.com/jumanjihouse/pre-commit-hooks
   rev: 3.0.0
   hooks:
+    - id: shellcheck
+      args:
+        -"--source-path=SCRIPTDIR scripts/* helpers/*"
     - id: markdownlint
       exclude: "examples/*"
 
-# JSON5 Linter
+# JSON5 and Yaml Prettyfier
 - repo: https://github.com/pre-commit/mirrors-prettier
   rev: v3.0.0-alpha.4
   hooks:
   - id: prettier
-    files: ".json5$"
+    types_or: [json5, yaml]

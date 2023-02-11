@@ -1,0 +1,27 @@
+# name: run-terraform-docs
+
+# on:
+#   push:
+#     branches: [main]
+
+# jobs:
+#   tf-docs:
+#     name: TF docs
+#     runs-on: ubuntu-latest
+#     env:
+#       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#     steps:
+#       - name: Checkout from Github
+#         uses: actions/checkout@v3
+#         id: actions-checkout
+#         with:
+#           ref: main
+      
+#       - name: Run Terraform-docs
+#         uses: terraform-docs/gh-actions@v1.0.0
+#         with:
+#           config-file: .terraform-docs.yaml
+#           working-dir: .
+#           output-file: README.md
+#           output-method: inject
+#           git-push: "true"
