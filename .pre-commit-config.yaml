@@ -59,7 +59,7 @@ repos:
   hooks:
     - id: shellcheck
       args:
-        -"--source-path=SCRIPTDIR scripts/* helpers/*"
+        - "--source-path=SCRIPTDIR scripts/* helpers/*"
     - id: markdownlint
       exclude: "examples/*"
 
