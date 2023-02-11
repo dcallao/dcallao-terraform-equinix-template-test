@@ -17,6 +17,7 @@ jobs:
     env:
       TF_VERSION: ${{ matrix.tf }}
       TFLINT_VERSION: ${{ matrix.tflint }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     strategy:
       matrix:
         os: [ubuntu-latest]
