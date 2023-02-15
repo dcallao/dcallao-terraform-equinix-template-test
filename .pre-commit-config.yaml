@@ -10,7 +10,6 @@ repos:
         - "--args=-recursive"
     - id: terraform_validate
       exclude: "^[^/]+$"
-    - id: terraform_providers_lock
     - id: terraform_tflint
       args:
         - "--args=--config=__GIT_WORKING_DIR__/.tflint.hcl"
