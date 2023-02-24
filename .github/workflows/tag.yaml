@@ -1,6 +1,5 @@
-name: 'run-git-release-tag'
+name: Tag
 # This workflow runs the git release tag
-
 
 on:
   workflow_dispatch:
