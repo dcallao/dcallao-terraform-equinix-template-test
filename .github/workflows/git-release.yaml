@@ -15,12 +15,6 @@ on:
 jobs:
   create-tag:
     runs-on: ubuntu-latest
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    permissions:
-      pull-requests: write
-      id-token: write
-      contents: read
 
     steps:
       - name: Checkout
