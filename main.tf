@@ -8,7 +8,7 @@
 
 # TEMPLATE: Replace sample provider described below with your own.
 terraform {
-  required_version = ">= 1.3"
+  required_version = ">= 1.5"
 
   provider_meta "equinix" {
     # TEMPLATE: Replace the module name with your own.
